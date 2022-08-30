@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ElectriciansForHomeServices.Models.Category>
+
+<!-- banner-bottom -->
+<div class="banner-bottom">
+    <div class="container">
+        <div class="agileits_heading_section">
+            <h3 class="wthree_head">Categories</h3>
+            <p class="agileits_w3layouts_para w3_agile_para">Select the Category of work to see the list of available staff in your area</p>
+        </div>
+
+        <div class="agileits_banner_bottom_grid_three">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 agileinfo_banner_bottom_grid_three_left">
+                    <div class="wthree_banner_bottom_grid_three_left1 grid">
+                        <a href="/Home/Electricians/?filter=category&id=@item.CatID">
+                            <figure class="effect-roxy">
+                                <img style="height:350px" src="~/Content/AppData/@item.Picture" alt=" " class="img-responsive" />
+                                <figcaption>
+                                    <h3>@item.Name</h3>
+                                    <p>@item.Details</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <br />
+                </div>
+
+            }
+
+
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!-- //banner-bottom -->

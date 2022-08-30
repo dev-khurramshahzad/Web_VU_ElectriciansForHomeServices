@@ -1,0 +1,90 @@
+﻿@model ElectriciansForHomeServices.Models.Electrician
+
+@{
+    ViewBag.Title = "ElectricianDetails";
+}
+
+<div class="banner-bottom">
+    <div class="container">
+        <div class="agileits_heading_section">
+            <h3 class="wthree_head">Electrician Details</h3>
+        </div>
+        <div class="w3ls_banner_bottom_grids">
+            <div>
+                <h4>Electrician Details</h4>
+                <hr />
+                <div class="row">
+                    <div class="col-md-5">
+                        <img src="~/Content/AppData/@Model.Picture"  class="img-responsive img-thumbnail" />
+                    </div>
+                    <div class="col-md-7">
+
+                        <form action="/Home/Booking" method="post">
+                            <style>
+                                td {
+                                    padding: 4px;
+                                }
+                            </style>
+                            <h5> @Model.Name</h5>
+                            <table style="font-size:12px;width:100%" border="1" class="">
+
+                                <tr>
+                                    <td>Category</td>
+                                    <td>@Model.Category.Name</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Rate</td>
+                                    <td>Rs. @Model.RatePerDay Per Day</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Email</td>
+                                    <td>@Model.Email</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Age</td>
+                                    <td>@Model.Age</td>
+                                </tr>
+
+                                <tr>
+                                    <td>CNIC</td>
+                                    <td>@Model.CNIC</td>
+                                </tr>
+                                <tr>
+                                    <td>Experience</td>
+                                    <td>@Model.ExpYears Years.</td>
+                                </tr>
+                                <tr>
+                                    <td>City</td>
+                                    <td>@Model.City.Name</td>
+                                </tr>
+                                <tr>
+                                    <td>Details</td>
+                                    <td>@Model.Details</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:30%">Work Date</td>
+                                    <td>
+                                        Start Date: <input type="date" name="StartDate" />
+                                        End Date: <input type="date" name="EndDate" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align:center;padding:8px">
+                                        <input type="hidden" value="@Model.ElecID" name="id" />
+                                        <button type="submit" class="btn btn-success"  href="/Home/BookingRequest/@Model.ElecID">Book Now</button>
+                                        <a class="btn btn-primary" href="#" onclick="window.history.back()">Back</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                      
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

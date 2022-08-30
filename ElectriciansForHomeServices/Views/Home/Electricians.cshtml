@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ElectriciansForHomeServices.Models.Electrician>
+
+@{
+    ViewBag.Title = "Electricians";
+}
+
+
+<!-- team -->
+<div class="banner-bottom">
+    <div class="container">
+        <div class="agileits_heading_section">
+            <h3 class="wthree_head">Avalibale Electricians</h3>
+        </div>
+        <div class="w3ls_banner_bottom_grids">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 agile_team_grid">
+                    <div class="agileits_w3layouts_team_grid">
+                        <ul class="agileinfo_social_icons">
+                            <li><a href="/Home/ElectricianDetails/@item.ElecID" class="wthree_twitter"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                        </ul>
+                        <img style="height:200px" src="~/Content/AppData/@item.Picture" alt=" " class="img-responsive">
+                    </div>
+
+                    <style>
+                        td {
+                            padding: 4px;
+                        }
+                    </style>
+
+                    <table style="font-size:12px;width:100%" border="1" class="">
+                        <tr>
+                            <td colspan="2" style="text-align:center">
+                                <h5> @item.Name</h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Category</td>
+                            <td>@item.Category.Name</td>
+                        </tr>
+                        <tr>
+                            <td>City</td>
+                            <td>@item.City.Name</td>
+                        </tr>
+                        <tr>
+                            <td>Rate</td>
+                            <td>Rs. @item.RatePerDay</td>
+                        </tr>
+                        <tr>
+                            <td>CNIC</td>
+                            <td>@item.CNIC</td>
+                        </tr>
+                        <tr>
+                            <td>Experience</td>
+                            <td>@item.ExpYears Years.</td>
+                        </tr>
+                        <tr>
+                            <td>Rate</td>
+                            <td>Rs. @item.RatePerDay</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align:center;padding:8px">
+                                <a class="btn btn-primary btn-sm" href="/Home/ElectricianDetails/@item.ElecID">Book Now</a>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            }
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!-- //team -->

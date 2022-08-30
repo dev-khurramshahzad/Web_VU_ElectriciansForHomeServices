@@ -1,0 +1,119 @@
+﻿@model ElectriciansForHomeServices.Models.Booking
+
+@{
+    ViewBag.Title = "Booking";
+}
+<div class="banner-bottom">
+    <div class="container">
+        <div class="agileits_heading_section">
+            <h3 class="wthree_head">Booking Request Sent</h3>
+        </div>
+        <div class="w3ls_banner_bottom_grids">
+            <div>
+                <h4>Booking Details</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Electrician.Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Electrician.Name)
+                    </dd>
+
+                    <dt>
+                        Booked By
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.User.Name)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.BookingDate)
+                    </dt>
+
+                    <dd>
+                        @string.Format("{0:dd MMMM yyyy}", Model.BookingDate)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.BookingTime)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.BookingTime)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.WorkStartDate)
+                    </dt>
+
+                    <dd>
+                        @string.Format("{0:dd MMMM yyyy}", Model.WorkStartDate)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.WorkEndDate)
+                    </dt>
+
+                    <dd>
+                        @string.Format("{0:dd MMMM yyyy}", Model.WorkEndDate)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Status)
+                    </dd>
+
+
+
+                    <dt>
+                        Charges Per Day
+                    </dt>
+
+                    <dd>
+                        Rs. @Model.Electrician.RatePerDay
+
+                    </dd>
+
+                    <dt>
+                        No. of Days
+                    </dt>
+
+                    <dd>
+                        @{
+                            int days = Model.WorkEndDate.Subtract(Model.WorkStartDate).Days;
+                        }
+
+                        @days Day(s)
+
+                    </dd>
+
+                    <dt>
+                        Charges Total
+                    </dt>
+
+                    <dd>
+                        Rs. @(Model.Electrician.RatePerDay * days)
+
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Details)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Details) -
+                    </dd>
+
+                </dl>
+                <hr />
+                <a href="/Home/"  class="btn btn-primary">Go to Home</a>
+            </div>
+        </div>
+    </div>
+</div>
