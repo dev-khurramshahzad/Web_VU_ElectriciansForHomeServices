@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Elect_BookingsController.cs" />
     <Compile Include="Controllers\Adm_BookingsController.cs" />
     <Compile Include="Controllers\Adm_CategoriesController.cs" />
     <Compile Include="Controllers\Adm_CitiesController.cs" />
@@ -148,7 +149,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Start\db_Electricians.sql" />
     <Content Include="Content\Admin\css\style-responsive.css" />
     <Content Include="Content\Admin\css\style.css" />
     <Content Include="Content\Admin\css\table-responsive.css" />
@@ -444,6 +444,15 @@
     <Content Include="Views\Adm_Users\Edit.cshtml" />
     <Content Include="Views\Adm_Users\Index.cshtml" />
     <Content Include="Views\Home\Cities.cshtml" />
+    <Content Include="Views\Elect_Bookings\Create.cshtml" />
+    <Content Include="Views\Elect_Bookings\Delete.cshtml" />
+    <Content Include="Views\Elect_Bookings\Details.cshtml" />
+    <Content Include="Views\Elect_Bookings\Edit.cshtml" />
+    <Content Include="Views\Elect_Bookings\Index.cshtml" />
+    <Content Include="Views\Shared\_ElectricianLayout.cshtml" />
+    <Content Include="Views\Users\ElectricianProfile.cshtml" />
+    <Content Include="Views\Users\UpdateProfile.cshtml" />
+    <Content Include="Views\Users\NewElectrician.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

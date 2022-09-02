@@ -1,0 +1,67 @@
+﻿@model ElectriciansForHomeServices.Models.Electrician
+
+@{
+    ViewBag.Title = "ElectricianProfile";
+    Layout = "~/Views/Shared/_ElectricianLayout.cshtml";
+}
+
+<h2>Electrician Profile
+        <a class="pull-right" href="/Users/UpdateProfile/@Model.ElecID">Edit Profile</a>
+    </h2>
+<hr />
+<div class="row">
+
+    <div class="col-md-7">
+
+        <table class="table table-bordered">
+            <tr>
+                <td>Name</td>
+                <td>@Model.Name</td>
+
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td>@Model.Category.Name</td>
+
+            </tr>
+            <tr>
+                <td>Rate</td>
+                <td>Rs. @Model.RatePerDay Per Day</td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td>@Model.Email</td>
+            </tr>
+
+            <tr>
+                <td>Age</td>
+                <td>@Model.Age</td>
+            </tr>
+
+            <tr>
+                <td>CNIC</td>
+                <td>@Model.CNIC</td>
+            </tr>
+            <tr>
+                <td>Experience</td>
+                <td>@Model.ExpYears Years.</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>@Model.City.Name</td>
+            </tr>
+            <tr>
+                <td>Details</td>
+                <td>@Model.Details</td>
+            </tr>
+
+        </table>
+
+
+
+    </div>
+    <div class="col-md-3">
+        <img src="~/Content/AppData/@Model.Picture" class="img-responsive img-thumbnail" />
+    </div>
+</div>

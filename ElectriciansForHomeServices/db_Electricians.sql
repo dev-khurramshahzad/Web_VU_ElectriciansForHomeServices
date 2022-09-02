@@ -1,7 +1,7 @@
-Create database [db_ElectriciansForHome]
+Create Database [db_ElectriciansForHome]
 USE [db_ElectriciansForHome]
 GO
-/****** Object:  Table [dbo].[Bookings]    Script Date: 08/30/2022 11:22:24 PM ******/
+/****** Object:  Table [dbo].[Bookings]    Script Date: 09/02/2022 1:26:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -22,7 +22,7 @@ CREATE TABLE [dbo].[Bookings](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Categories]    Script Date: 08/30/2022 11:22:24 PM ******/
+/****** Object:  Table [dbo].[Categories]    Script Date: 09/02/2022 1:26:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -39,7 +39,7 @@ CREATE TABLE [dbo].[Categories](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Cities]    Script Date: 08/30/2022 11:22:24 PM ******/
+/****** Object:  Table [dbo].[Cities]    Script Date: 09/02/2022 1:26:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -55,7 +55,7 @@ CREATE TABLE [dbo].[Cities](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Electrician]    Script Date: 08/30/2022 11:22:24 PM ******/
+/****** Object:  Table [dbo].[Electrician]    Script Date: 09/02/2022 1:26:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -82,7 +82,7 @@ CREATE TABLE [dbo].[Electrician](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 08/30/2022 11:22:24 PM ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 09/02/2022 1:26:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -151,6 +151,8 @@ INSERT [dbo].[Electrician] ([ElecID], [Name], [Age], [CNIC], [Picture], [ExpYear
 GO
 INSERT [dbo].[Electrician] ([ElecID], [Name], [Age], [CNIC], [Picture], [ExpYears], [Phone], [Email], [Password], [RatePerDay], [CItyFID], [CatFID], [Rating], [Status], [Details]) VALUES (8, N'Nimra Khan', 22, N'3410125587865', N'19.jpg', 4, N'3484676662                    ', N'NimraKhan456@gmail.com', N'124', 4000, 1005, 1006, 5, N'Active', N'Very Good ')
 GO
+INSERT [dbo].[Electrician] ([ElecID], [Name], [Age], [CNIC], [Picture], [ExpYears], [Phone], [Email], [Password], [RatePerDay], [CItyFID], [CatFID], [Rating], [Status], [Details]) VALUES (1005, N'Khurram Shahzad', 22, N'3410121087865', N'ab3.jpg', 4, N'03484086662                   ', N'khurramshahzadbilal786@gmail.com', N'124', 2000, 1005, 1006, 1, N'Active', N'Machine Wash Service')
+GO
 SET IDENTITY_INSERT [dbo].[Electrician] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Users] ON 
@@ -160,6 +162,8 @@ GO
 INSERT [dbo].[Users] ([UserID], [Name], [Phone], [Address], [Email], [Password], [CNIC], [Details], [Status], [Image], [Type]) VALUES (2, N'Khurram Shahzad', N'03484086662', N'Gujranwala', N'khurramshahzadbilal786@gmail.com', N'124', N'124', N'Active', NULL, NULL, N'User')
 GO
 INSERT [dbo].[Users] ([UserID], [Name], [Phone], [Address], [Email], [Password], [CNIC], [Details], [Status], [Image], [Type]) VALUES (4, N'Admin', N'213', N'234', N'admin@admin.com', N'admin', N'1324234', N'Active', NULL, NULL, N'Admin')
+GO
+INSERT [dbo].[Users] ([UserID], [Name], [Phone], [Address], [Email], [Password], [CNIC], [Details], [Status], [Image], [Type]) VALUES (1003, N'Khurram Shahzad', N'3484086662', N'Gujranwala', N'developer.khurramshahzad@gmail.com', N'123', N'123', N'Active', NULL, NULL, NULL)
 GO
 SET IDENTITY_INSERT [dbo].[Users] OFF
 GO
