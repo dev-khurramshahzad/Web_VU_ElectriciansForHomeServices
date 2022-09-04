@@ -12,7 +12,6 @@ namespace ElectriciansForHomeServices.Controllers
     public class UsersController : Controller
     {
         private dbModel db = new dbModel();
-        // GET: Users
         public ActionResult Admin()
         {
             return View();
@@ -56,7 +55,7 @@ namespace ElectriciansForHomeServices.Controllers
             {
                 db.Entry(electrician).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Redirect("/Users/ElectricianProfile/"+electrician.ElecID);
             }
             ViewBag.CatFID = new SelectList(db.Categories, "CatID", "Name", electrician.CatFID);
             ViewBag.CItyFID = new SelectList(db.Cities, "CityID", "Name", electrician.CItyFID);
@@ -193,7 +192,5 @@ namespace ElectriciansForHomeServices.Controllers
             ViewBag.CItyFID = new SelectList(db.Cities, "CityID", "Name", electrician.CItyFID);
             return View(electrician);
         }
-
-
     }
 }
